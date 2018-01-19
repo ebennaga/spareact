@@ -15,6 +15,11 @@ class App extends Component {
                  <li><Link to={'/Login'}>Login</Link></li>
                  <li><Link to={'/Register'}>Register</Link></li>
               </ul>
+              <ul>
+                <ListItem quantity="1" name="Bread" />
+                <ListItem quantity="2" name="Egg" />
+                <ListItem quantity="3" name="fruit"/>
+              </ul>
               <hr />
               
               <Switch>
@@ -25,6 +30,16 @@ class App extends Component {
            </div>
         </Router>
      );
+  }
+}
+
+class ListItem extends Component {
+  render(){
+    return (
+      <li>
+        {this.props.quantity}x{this.props.name}
+      </li>
+    );
   }
 }
 

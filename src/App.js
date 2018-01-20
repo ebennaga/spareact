@@ -3,22 +3,24 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Register from './components/Register'
 import Home from './components/Home';
 import Login from './components/Login';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+
 
 class App extends Component {
   render() {
      return (
         <Router>
            <div>
-              <h2>Single Page Application</h2>
+           <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                <AppBar title="Single Page Application" />
+            </MuiThemeProvider>            
               <ul>
                  <li><Link to={'/'}>Home</Link></li>
                  <li><Link to={'/Login'}>Login</Link></li>
                  <li><Link to={'/Register'}>Register</Link></li>
-              </ul>
-              <ul>
-                <ListItem quantity="1" name="Bread" />
-                <ListItem quantity="2" name="Egg" />
-                <ListItem quantity="3" name="fruit"/>
               </ul>
               <hr />
               
@@ -33,15 +35,6 @@ class App extends Component {
   }
 }
 
-class ListItem extends Component {
-  render(){
-    return (
-      <li>
-        {this.props.quantity}x{this.props.name}
-      </li>
-    );
-  }
-}
 
 
 

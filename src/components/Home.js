@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
+
 
 
 class Home extends Component {
@@ -6,6 +8,7 @@ class Home extends Component {
         return (
             <div className="Home">
                 This is Home
+            
             </div>
         );
     }
